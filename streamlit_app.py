@@ -9,19 +9,20 @@ import pandas as pd
 
 uploaded_files = st.file_uploader("Choose a CSV file", accept_multiple_files=True)
 for uploaded_file in uploaded_files:
-     bytes_data = uploaded_file.read()
-     st.write("filename:", uploaded_file.name)
-     st.write(bytes_data)
-        
-
+     bytes_data = uploaded_file.read()       
+     dataframe = pd.read_csv(uploaded_file)
+     st.write(dataframe)
+     
 st.write("""
 #My First App
 Hello *World!*
 """)
 
-d = {"Value":[1,2,3],
-    "Number":[4,5,6]}
-df = pd.DataFrame(d)
+
+
+#d = {"Value":[1,2,3],
+    #"Number":[4,5,6]}
+df = pd.DataFrame(dataframe)
 
 st.line_chart(df)
 
