@@ -9,7 +9,7 @@ import pandas as pd
 
 uploaded_file = st.file_uploader("Choose a file")
 dataframe = pd.read_csv(uploaded_file)
-#st.write(dataframe)
+st.write(dataframe)
      
 st.write("""
 #My First App
